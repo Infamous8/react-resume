@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import {PageLayout} from "./components/templates/page-layout";
 
 function App() {
   return (
     <div>
-      
+        <PageLayout>
+
+        </PageLayout>
     </div>
   );
 }
