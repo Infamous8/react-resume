@@ -3,11 +3,13 @@ import styled from "styled-components";
 import {Copyright} from "../atoms/copyright";
 import {SelfContainedContentCell} from "../molecules/self-contained-content-cell";
 
-interface FooterProps {}
+interface FooterProps {
+    margin?: string
+}
 
 export const Footer: React.FC<FooterProps> = (props) => {
     return (
-        <SelfContainedContentCell>
+        <SelfContainedContentCell margin={props.margin}>
             <FooterContent>
                 <Copyright/>
             </FooterContent>

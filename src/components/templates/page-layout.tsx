@@ -12,11 +12,11 @@ interface PageLayoutProps {
 export const PageLayout: React.FC<PageLayoutProps> = (props) => {
     return (
         <StyledPageLayout>
-            <Header/>
             <ContentContainer>
+                <Header margin={'30px 0 50px 0'} />
                 {props.children}
+                <Footer margin={'80px 0 0 0'} />
             </ContentContainer>
-            <Footer/>
         </StyledPageLayout>
     )
 }

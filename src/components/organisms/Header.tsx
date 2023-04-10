@@ -5,11 +5,13 @@ import {Avatar} from "../atoms/avatar";
 import {UserDetails} from "../atoms/user-details";
 import {UserLinks} from "../atoms/user-links";
 
-interface HeaderProps {}
+interface HeaderProps {
+    margin?: string
+}
 
 export const Header: React.FC<HeaderProps> = (props) => {
     return (
-        <SelfContainedContentCell margin={'30px 0 0 0'}>
+        <SelfContainedContentCell margin={props.margin}>
             <HeaderContent>
                 <Avatar />
                 <UserDetails/>
