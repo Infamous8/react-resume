@@ -2,19 +2,30 @@
   "user": {
     "firstName": "Greg",
     "middleName": "J",
-    "lastname": "Bales"
+    "lastname": "Bales",
+    "profession": "Front End React Developer",
+    "yearsExperience": "5+"
+  },
+  "style": {
+    "avatar": false
   },
   "sections": {
     "associations": true,
     "education": true,
     "experience": true,
     "interests": true,
-    "links": true,
     "projects": true,
     "recognitions": true,
     "skills": true
   },
-  "style": {
-    "avatar": false
-  }
+  "links": [
+    {
+      "name": "github",
+      "url": "https://github.com/Infamous8"
+    },
+    {
+      "name": "linkedIn",
+      "url": "https://www.linkedin.com/in/greg-j-bales-a91763139/"
+    }
+  ]
 }

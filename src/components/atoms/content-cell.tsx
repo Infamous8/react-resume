@@ -5,7 +5,7 @@ import {Button} from "./button";
 interface ContentCellProps {
     children: React.ReactNode
     collapsible: boolean
-    section?: 'associations' | 'education' | 'experience' | 'interests' | 'links' | 'projects' | 'recognitions' | 'skills'
+    section?: 'associations' | 'education' | 'experience' | 'interests' | 'projects' | 'recognitions' | 'skills'
 }
 
 export const ContentCell: React.FC<ContentCellProps> = (props) => {
@@ -48,7 +48,7 @@ const StyledContentCell = styled.div`
   padding: 15px;
   overflow: hidden;
   background-color: #E0E5EC;
-  box-shadow:  15px 15px 30px #ced3d9, -15px -15px 30px #f2f7ff;
+  box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF;
   margin-bottom: 30px;
   transition: height .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 `

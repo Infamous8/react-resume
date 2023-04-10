@@ -30,11 +30,6 @@ export const Home: React.FC<HomeProps> = (props) => {
                     Interests
                 </ContentCell>
             )}
-            {contentSections.links && (
-                <ContentCell  section={'links'} collapsible={true}>
-                    Links
-                </ContentCell>
-            )}
             {contentSections.projects && (
                 <ContentCell  section={'projects'} collapsible={true}>
                     Projects
