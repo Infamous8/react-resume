@@ -9,7 +9,7 @@ interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = (props) => {
     return (
-        <SelfContainedContentCell margin={'50px 0 0 0'}>
+        <SelfContainedContentCell margin={'30px 0 0 0'}>
             <HeaderContent>
                 <Avatar />
                 <UserDetails/>

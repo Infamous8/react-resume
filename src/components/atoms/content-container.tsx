@@ -25,14 +25,17 @@ const StyledContentContainer = styled.div`
   }
   @media only screen and (max-width: 720px) {
     transition: padding .2s cubic-bezier(0.4, 0.0, 0.2, 1);
-    padding: 50px 30px;
+    margin: 0 auto 60px auto;
+    padding: 20px 30px;
   }
   @media only screen and (max-width: 640px) {
     transition: padding .2s cubic-bezier(0.4, 0.0, 0.2, 1);
-    padding: 50px 15px;
+    margin: 0 auto 40px auto;
+    padding: 20px 15px;
   }
   @media only screen and (max-width: 380px) {
     transition: padding .2s cubic-bezier(0.4, 0.0, 0.2, 1);
-    padding: 50px 10px;
+    margin: 0 auto 0 auto;
+    padding: 20px 10px;
   }
 `
