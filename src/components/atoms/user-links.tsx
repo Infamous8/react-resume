@@ -20,22 +20,18 @@ export const UserLinks: React.FC<UserLinksProps> = (props) => {
     })
     return (
         <StyledUserLinks>
-            <LinksWrap>
-                {links}
-            </LinksWrap>
+            {links}
         </StyledUserLinks>
     )
 }
 
 const StyledUserLinks = styled.div`
-  width: 150px;
+  width: 100%;
+  overflow-y: scroll;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  border: 1px solid red;
+  margin-top: 30px;
 `
 
 const LinksWrap = styled.div`

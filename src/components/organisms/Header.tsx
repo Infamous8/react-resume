@@ -13,8 +13,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
     return (
         <SelfContainedContentCell margin={props.margin}>
             <HeaderContent>
-                <Avatar />
-                <UserDetails/>
+                <UserContent>
+                    <Avatar />
+                    <UserDetails/>
+                </UserContent>
                 <UserLinks/>
             </HeaderContent>
         </SelfContainedContentCell>
@@ -23,5 +25,9 @@ export const Header: React.FC<HeaderProps> = (props) => {
 
 const HeaderContent = styled.nav`
   padding: 30px;
+`
+
+const UserContent = styled.div`
+  width: 100%;
   display: flex;
 `

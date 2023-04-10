@@ -17,6 +17,10 @@ export const UserDetails: React.FC<UserDetailsProps> = (props) => {
                     </>
                 )}
             </UserYearsExperience>
+            <UserContactDetails>
+                Phone: 0000000000
+                Email: 0000000000
+            </UserContactDetails>
             <UserDetailsDecoration/>
         </StyledUserDetails>
     )
@@ -25,7 +29,7 @@ export const UserDetails: React.FC<UserDetailsProps> = (props) => {
 const StyledUserDetails = styled.div`
   margin-left: 50px;
   position: relative;
-  width: 70%;
+  width: calc(100% - 180px - 50px);
 `
 
 const UserName = styled.h1``
@@ -33,6 +37,13 @@ const UserName = styled.h1``
 const UserProfession = styled.h2``
 
 const UserYearsExperience = styled.span``
+
+const UserContactDetails = styled.div`
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  right: 0;
+`
 
 const UserDetailsDecoration = styled.div`
   width: 100%;
