@@ -10,11 +10,6 @@ export const Home: React.FC<HomeProps> = (props) => {
 
     return (
         <PageLayout>
-            {contentSections.associations && (
-                <ContentCell section={'associations'} collapsible={true}>
-                    Associations
-                </ContentCell>
-            )}
             {contentSections.education && (
                 <ContentCell section={'education'} collapsible={true}>
                     Education
@@ -25,9 +20,9 @@ export const Home: React.FC<HomeProps> = (props) => {
                     Experience
                 </ContentCell>
             )}
-            {contentSections.interests && (
-                <ContentCell  section={'interests'} collapsible={true}>
-                    Interests
+            {contentSections.skills && (
+                <ContentCell  section={'skills'} collapsible={true}>
+                    Skills
                 </ContentCell>
             )}
             {contentSections.projects && (
@@ -35,14 +30,19 @@ export const Home: React.FC<HomeProps> = (props) => {
                     Projects
                 </ContentCell>
             )}
+            {contentSections.associations && (
+                <ContentCell section={'associations'} collapsible={true}>
+                    Associations
+                </ContentCell>
+            )}
+            {contentSections.interests && (
+                <ContentCell  section={'interests'} collapsible={true}>
+                    Interests
+                </ContentCell>
+            )}
             {contentSections.recognitions && (
                 <ContentCell  section={'recognitions'} collapsible={true}>
                     Recognitions
-                </ContentCell>
-            )}
-            {contentSections.skills && (
-                <ContentCell  section={'skills'} collapsible={true}>
-                    Skills
                 </ContentCell>
             )}
         </PageLayout>
