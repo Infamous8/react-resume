@@ -15,7 +15,7 @@ export const PageLayout: React.FC<PageLayoutProps> = (props) => {
             <ContentContainer>
                 <Header margin={'30px 0 50px 0'} />
                 {props.children}
-                <Footer margin={'80px 0 0 0'} />
+                <Footer margin={'150px 0 0 0'} />
             </ContentContainer>
         </StyledPageLayout>
     )

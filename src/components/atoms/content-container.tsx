@@ -16,7 +16,7 @@ export const ContentContainer: React.FC<ContentContainerProps> = (props) => {
 const StyledContentContainer = styled.div`
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto;
   transition: padding .2s cubic-bezier(0.4, 0.0, 0.2, 1);
   padding: 50px 0;
   @media only screen and (max-width: 1920px) {
