@@ -25,13 +25,16 @@ const StyledAvatar = styled.div`
   align-items: center;
   justify-content: center;
   border: 3px solid #00DBE5;
-  background-color: #F2F7FF;
+  background-color: rgba(0,0,0,.2); //DARK MODE
+  //background-color: #F2F7FF; //LIGHT MODE
   overflow: hidden;
-  box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF;
+  box-shadow:  -12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2); //DARK MODE
+  //box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF; //LIGHT MODE
 `
 
 const UserInitials = styled.div`
   font-size: 64px;
+  pointer-events: none;
 `
 
 const UserImage = styled.div`

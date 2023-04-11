@@ -3,18 +3,13 @@
 }
 
 body {
-  background-color: #E0E5EC;
+  background-color: #262626;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  color: #F8F0E3; /* DARK MODE */
+  /*color: #212427; !*LIGHT MODE *!*/
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +18,8 @@ code {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #E0E5EC;
+  background: #262626; /* DARK MODE */
+  /*background: #E0E5EC; !*LIGHT MODE *!*/
 }
 
 /* Handle */

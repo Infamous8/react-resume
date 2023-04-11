@@ -14,7 +14,7 @@ export const UserLinks: React.FC<UserLinksProps> = (props) => {
     const links = contentData.links.map((link: UserLinks, index: number) => {
         return (
             <LinkWrap key={index}>
-                <PngIcon type={link.name} href={link.url} />
+                <PngIcon type={link.name} href={link.url} mode={"dark"} />
             </LinkWrap>
         )
     })

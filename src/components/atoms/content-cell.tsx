@@ -52,8 +52,10 @@ const StyledContentCell = styled.div`
   border-radius: 8px;
   padding: 15px;
   overflow: hidden;
-  background-color: #E0E5EC;
-  box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF;
+  background-color: #262626; //DARK MODE
+  //background-color: #E0E5EC; //LIGHT MODE
+  box-shadow:  -12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2); //DARK MODE
+  //box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF; //LIGHT MODE
   margin-bottom: 30px;
   transition: height .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 `
