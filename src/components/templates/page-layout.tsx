@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {ContentContainer} from "../atoms/content-container";
 import {Footer} from "../organisms/footer";
 import {Header} from "../organisms/Header";
-import {Switch} from "../atoms/switch";
 import {ToggleSwitch} from "../molecules/toggle-switch";
 
 
