@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import {PngIcon} from "./png-icon";
 
 interface UserLinksProps {}
 
 interface UserLinks {
-    name: string
+    name: 'GitHub' | 'LinkedIn' | 'WhatsApp' | 'CodePen'
     url: string
 }
 
@@ -12,10 +13,9 @@ export const UserLinks: React.FC<UserLinksProps> = (props) => {
     const contentData = require('../../data/structure.json');
     const links = contentData.links.map((link: UserLinks, index: number) => {
         return (
-            <div key={index}>
-                <span>{link.name}</span>
-                <a href={link.url} target={"_blank"}>Link</a>
-            </div>
+            <LinkWrap key={index}>
+                <PngIcon type={link.name} href={link.url} />
+            </LinkWrap>
         )
     })
     return (
@@ -27,14 +27,18 @@ export const UserLinks: React.FC<UserLinksProps> = (props) => {
 
 const StyledUserLinks = styled.div`
   width: 100%;
-  overflow-y: scroll;
+  float: right;
+  margin-top: 15px;
   display: flex;
-  align-items: center;
-  border: 1px solid red;
-  margin-top: 30px;
+  justify-content: center;
+  overflow: visible;
+  margin-bottom: 10px;
 `
 
-const LinksWrap = styled.div`
-  border: 1px solid blue;
-  width: 100%;
+const LinkWrap = styled.div`
+  width: 150px;
+  height: 71px;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
 `

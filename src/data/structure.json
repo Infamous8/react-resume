@@ -3,8 +3,10 @@
     "firstName": "Greg",
     "middleName": "J",
     "lastname": "Bales",
-    "profession": "Front End Developer Specialising in React",
-    "yearsExperience": "5+"
+    "profession": "Front End Developer Specialising in React.js",
+    "yearsExperience": "5+",
+    "contactPhone": "0735879340",
+    "contactEmail": "balesg@gmail.com"
   },
   "style": {
     "avatar": false
@@ -20,12 +22,20 @@
   },
   "links": [
     {
-      "name": "github",
+      "name": "GitHub",
       "url": "https://github.com/Infamous8"
     },
     {
-      "name": "linkedIn",
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/greg-j-bales-a91763139/"
+    },
+    {
+      "name": "WhatsApp",
+      "url": "https://wa.me/+27735879340"
+    },
+    {
+      "name": "CodePen",
+      "url": "https://codepen.io/Infamous5b9ae1d83a"
     }
   ]
 }

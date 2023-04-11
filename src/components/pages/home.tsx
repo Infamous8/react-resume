@@ -11,37 +11,37 @@ export const Home: React.FC<HomeProps> = (props) => {
     return (
         <PageLayout>
             {contentSections.education && (
-                <ContentCell section={'education'} collapsible={true}>
+                <ContentCell section={'education'} collapsible={true} collapsedDefault={false} >
                     Education
                 </ContentCell>
             )}
             {contentSections.experience && (
-                <ContentCell  section={'experience'} collapsible={true}>
+                <ContentCell  section={'experience'} collapsible={true} collapsedDefault={false}>
                     Experience
                 </ContentCell>
             )}
             {contentSections.skills && (
-                <ContentCell  section={'skills'} collapsible={true}>
+                <ContentCell  section={'skills'} collapsible={true} collapsedDefault={false}>
                     Skills
                 </ContentCell>
             )}
             {contentSections.projects && (
-                <ContentCell  section={'projects'} collapsible={true}>
+                <ContentCell  section={'projects'} collapsible={true} collapsedDefault={true}>
                     Projects
                 </ContentCell>
             )}
             {contentSections.associations && (
-                <ContentCell section={'associations'} collapsible={true}>
+                <ContentCell section={'associations'} collapsible={true} collapsedDefault={true}>
                     Associations
                 </ContentCell>
             )}
             {contentSections.interests && (
-                <ContentCell  section={'interests'} collapsible={true}>
+                <ContentCell  section={'interests'} collapsible={true} collapsedDefault={true}>
                     Interests
                 </ContentCell>
             )}
             {contentSections.recognitions && (
-                <ContentCell  section={'recognitions'} collapsible={true}>
+                <ContentCell  section={'recognitions'} collapsible={true} collapsedDefault={true}>
                     Recognitions
                 </ContentCell>
             )}

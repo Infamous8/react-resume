@@ -1,59 +1,48 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import {MaterialIcon} from "./material-icon";
 
 interface ButtonProps {
-    title?: string
     href?: string
     onClick?: () => void
+    children?: React.ReactNode
+    collapsedDefault?: boolean
 }
 
-interface TextButtonProps {
-    title: string
-}
-
-interface LinkButtonProps {
+interface LinkProps {
     href: string
+    children: React.ReactNode
 }
 
 interface ChevronButtonProps {
     onClick: () => void
+    collapsedDefault?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
     return (
         <>
-            {props.title && (
-                <TextButton title={props.title} />
-            )}
             {props.href && (
-                <LinkButton href={props.href} />
+                <Link href={props.href} children={props.children}/>
             )}
-            {props.title === undefined && props.href === undefined && props.onClick && (
-                <ChevronButton onClick={props.onClick}/>
+            {props.href === undefined && props.onClick && (
+                <ChevronButton onClick={props.onClick} collapsedDefault={props.collapsedDefault}/>
             )}
         </>
     )
 }
 
-const TextButton: React.FC<TextButtonProps> = (props) => {
+const Link: React.FC<LinkProps> = (props) => {
     return (
-        <StyledButton>
-
-        </StyledButton>
-    )
-}
-
-const LinkButton: React.FC<LinkButtonProps> = (props) => {
-    return (
-        <StyledLinkButton href={props.href}>
-
+        <StyledLinkButton href={props.href} target={'_blank'}>
+            {props.children}
         </StyledLinkButton>
     )
 }
 
 const ChevronButton: React.FC<ChevronButtonProps> = (props) => {
-    const [rotated, setRotated] = useState(false)
-    const Chevron = require("../../assets/icons/chevron.png")
+    const defaultRotated = props.collapsedDefault !== undefined ? props.collapsedDefault : false
+    const [rotated, setRotated] = useState(defaultRotated)
 
     const onClick = () => {
         setRotated(!rotated);
@@ -62,7 +51,9 @@ const ChevronButton: React.FC<ChevronButtonProps> = (props) => {
 
     return (
         <StyledButton onClick={onClick}>
-            <ChevronImage src={Chevron} alt="chevron icon" style={rotated ? {transform: "rotate(180deg)"} : {}} />
+            <Chevron style={rotated ? {transform: "rotate(180deg)"} : {}}>
+                <MaterialIcon name={'expand_more'} />
+            </Chevron>
         </StyledButton>
     )
 }
@@ -91,8 +82,12 @@ const StyledButton = styled.button`
   }
 `
 
-const ChevronImage = styled.img`
+const Chevron = styled.div`
   transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  pointer-events: none;
 `
 
-const StyledLinkButton = styled.a``
+const StyledLinkButton = styled.a`
+  text-decoration: none;
+  color: #808080;
+`

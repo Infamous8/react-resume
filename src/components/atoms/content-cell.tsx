@@ -6,10 +6,12 @@ interface ContentCellProps {
     children: React.ReactNode
     collapsible: boolean
     section?: 'associations' | 'education' | 'experience' | 'interests' | 'projects' | 'recognitions' | 'skills'
+    title?: string
+    collapsedDefault?: boolean
 }
 
 export const ContentCell: React.FC<ContentCellProps> = (props) => {
-    const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(props.collapsedDefault)
 
     const toggleCollapse = () => {
         setCollapsed(!collapsed)
@@ -19,13 +21,16 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
         <StyledContentCell>
             {props.collapsible && (
                 <CellControls>
-                    <ControlsTitle>{props.section}</ControlsTitle>
+                    <ControlsTitle>
+                        {props.section && props.section}
+                        {props.title && props.title}
+                    </ControlsTitle>
                     <ControlsDecorationWrap>
                         {collapsed && <ControlsDecorationForward />}
                         {!collapsed && <ControlsDecorationBackward />}
                     </ControlsDecorationWrap>
                     <ControlsButtonWrap>
-                        <Button onClick={toggleCollapse} />
+                        <Button onClick={toggleCollapse} collapsedDefault={props.collapsedDefault} />
                     </ControlsButtonWrap>
                 </CellControls>
             )}
@@ -63,6 +68,7 @@ const CellControls = styled.div`
 
 const ControlsTitle = styled.div`
   text-transform: capitalize;
+  white-space: nowrap;
 `
 
 const ControlsDecorationWrap = styled.div`
