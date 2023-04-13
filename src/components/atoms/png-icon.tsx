@@ -14,7 +14,7 @@ export const PngIcon: React.FC<MaterialIconPhoneProps> = (props) => {
     const iconImg = require(`../../assets/icons/${props.mode}/${props.type}.png`)
     return (
         <StyledPngIcon href={props.href} target={"_blank"}>
-            <PngIconContent mode={mode}>
+            <PngIconContent dark={mode}>
                 <img src={iconImg} alt={`${props.type} icon`} />
             </PngIconContent>
             <ToolTipWrap className={'tooltip'}>
@@ -36,14 +36,14 @@ const PngIconContent = styled.div<StyledComponentProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: ${props => props.mode ? '2px solid #000000' : '2px solid #FFFFFF'};
+  border: ${props => props.dark ? '2px solid #000000' : '2px solid #FFFFFF'};
   border-radius: 50%;
   position: relative;
   transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
   img {
     height: 20px;
     width: auto;
-    filter: ${props => props.mode? 'invert(0)' : 'invert(1)'};
+    filter: ${props => props.dark? 'invert(0)' : 'invert(1)'};
     transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   :hover + .tooltip {

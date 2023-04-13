@@ -20,7 +20,7 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
     }
 
     return (
-        <StyledContentCell mode={mode}>
+        <StyledContentCell dark={mode}>
             {props.collapsible && (
                 <CellControls>
                     <ControlsTitle>
@@ -36,17 +36,62 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
                     </ControlsButtonWrap>
                 </CellControls>
             )}
-            {collapsed && (
+            {collapsed && props.collapsible && (
                 <CellContentCollapse>
                     {!collapsed && props.children}
                 </CellContentCollapse>
             )}
-            {!collapsed && (
+            {!collapsed && props.collapsible && (
                 <CellContentExpand>
                     {props.children}
                 </CellContentExpand>
             )}
+            {!props.collapsible && (
+                <CellContentNoCollapse>
+                    {props.children}
+                </CellContentNoCollapse>
+            )}
         </StyledContentCell>
+    )
+}
+
+export const SimplifiedContentCell: React.FC<ContentCellProps> = (props) => {
+    const mode = useContext(ThemeContext).mode
+    const [collapsed, setCollapsed] = useState(props.collapsedDefault)
+
+    const toggleCollapse = () => {
+        setCollapsed(!collapsed)
+    }
+    return (
+        <StyledSimplifiedContentCell>
+            {props.collapsible && (
+                <CellControls>
+                    <ControlsTitle>
+                        {props.section && props.section}
+                        {props.title && props.title}
+                    </ControlsTitle>
+                    <ControlsButtonWrap>
+                        <Button simple={true} onClick={toggleCollapse} collapsedDefault={props.collapsedDefault} />
+                    </ControlsButtonWrap>
+                </CellControls>
+            )}
+            {collapsed && props.collapsible && (
+                <CellContentCollapse>
+                    {!collapsed && props.children}
+                </CellContentCollapse>
+            )}
+            {!collapsed && props.collapsible && (
+                <CellContentExpand>
+                    {props.children}
+                </CellContentExpand>
+            )}
+            {!props.collapsible && (
+                <div>
+                    test
+                    {props.children}
+                </div>
+            )}
+        </StyledSimplifiedContentCell>
     )
 }
 
@@ -54,10 +99,14 @@ const StyledContentCell = styled.div<StyledComponentProps>`
   border-radius: 8px;
   padding: 15px;
   overflow: hidden;
-  background-color: ${props => props.mode ? '#E0E5EC' : '#262626'};
-  box-shadow: ${props => props.mode ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'} ;
+  background-color: ${props => props.dark ? '#E0E5EC' : '#262626'};
+  box-shadow: ${props => props.dark ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'} ;
   margin-bottom: 30px;
   transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+`
+
+const StyledSimplifiedContentCell = styled.div`
+  margin-top: 60px;
 `
 
 const CellControls = styled.div`
@@ -145,4 +194,8 @@ const CellContentCollapse = styled.div`
       opacity: 0;
     }
   }
+`
+
+const CellContentNoCollapse = styled.div`
+  animation: none;
 `

@@ -11,7 +11,7 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
     const contentUser = contentData.user;
     const userString = contentUser.firstName?.charAt(0) + contentUser.middleName?.charAt(0) + contentUser.lastname?.charAt(0);
     return (
-        <StyledAvatar mode={mode}>
+        <StyledAvatar dark={mode}>
             {!contentStyle.avatar && <UserInitials>{userString}</UserInitials>}
             {contentStyle.avatar && <UserImage/>}
         </StyledAvatar>
@@ -26,9 +26,9 @@ const StyledAvatar = styled.div<StyledComponentProps>`
   align-items: center;
   justify-content: center;
   border: 3px solid #00DBE5;
-  background-color: ${props => props.mode ? '#F2F7FF' : 'rgba(0,0,0,.2)'};
+  background-color: ${props => props.dark ? '#F2F7FF' : 'rgba(0,0,0,.2)'};
   overflow: hidden;
-  box-shadow: ${props => props.mode ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'}; //DARK MODE
+  box-shadow: ${props => props.dark ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'}; //DARK MODE
   transition: background-color, box-shadow .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 `
 

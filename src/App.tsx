@@ -7,7 +7,7 @@ interface ThemeContextProps {
 }
 
 export interface StyledComponentProps {
-    mode: boolean
+    dark: boolean
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({mode: true, toggleMode: () => null})

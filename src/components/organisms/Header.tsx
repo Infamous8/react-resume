@@ -4,7 +4,7 @@ import {SelfContainedContentCell} from "../molecules/self-contained-content-cell
 import {Avatar} from "../atoms/avatar";
 import {UserDetails} from "../atoms/user-details";
 import {UserLinks} from "../atoms/user-links";
-import {ContentCell} from "../atoms/content-cell";
+import {SimplifiedContentCell} from "../atoms/content-cell";
 
 interface HeaderProps {
     margin?: string
@@ -19,9 +19,9 @@ export const Header: React.FC<HeaderProps> = (props) => {
                     <UserDetails/>
                 </UserContent>
                 <UserLinks/>
-                <ContentCell title={'About me'} collapsible={true} collapsedDefault={true}>
-                    About Me
-                </ContentCell>
+                <SimplifiedContentCell title={'A little about me'} collapsible={true} collapsedDefault={true}>
+                    A little about me
+                </SimplifiedContentCell>
             </HeaderContent>
         </SelfContainedContentCell>
     )
