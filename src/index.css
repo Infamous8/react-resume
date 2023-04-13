@@ -16,8 +16,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #262626; /* DARK MODE */
-  /*background: #E0E5EC; !*LIGHT MODE *!*/
+  background: transparent;
 }
 
 /* Handle */

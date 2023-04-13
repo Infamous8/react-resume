@@ -15,7 +15,7 @@ export const Switch: React.FC<SwitchProps> = (props) => {
 
     return (
         <StyledSwitch onClick={toggleSwitch}>
-            <SwitchOutline style={toggled ? {backgroundColor: '#E0E5EC'} : {backgroundColor: '#121212'}}>
+            <SwitchOutline style={toggled ? {backgroundColor: '#D1D1D1'} : {backgroundColor: '#121212'}}>
                 <Lever style={toggled ? {marginLeft: 0, backgroundColor: '#A7A7A7'} : {marginLeft: 20, backgroundColor: '#808080'}}/>
             </SwitchOutline>
         </StyledSwitch>

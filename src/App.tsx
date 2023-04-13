@@ -27,7 +27,7 @@ function App() {
           document.body.style.backgroundColor = '#212427'
           document.body.style.color = '#F8F0E3'
       }
-  })
+  });
 
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>
