@@ -11,6 +11,8 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = (props) => {
+    const contentData = require('../../data/structure.json');
+    const userData = contentData.user
     return (
         <SelfContainedContentCell margin={props.margin}>
             <HeaderContent>
@@ -23,7 +25,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
                 <UserLinks/>
                 <UserAbout>
                     <SimplifiedContentCell title={'A little about me'} collapsible={true} collapsedDefault={true}>
-                        A little about me
+                        {userData.about}
                     </SimplifiedContentCell>
                 </UserAbout>
             </HeaderContent>
