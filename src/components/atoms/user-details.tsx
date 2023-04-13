@@ -44,6 +44,10 @@ const StyledUserDetails = styled.div`
   margin-left: 50px;
   position: relative;
   width: calc(100% - 180px - 50px);
+  @media only screen and (max-width: 950px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `
 
 const UserName = styled.h1``
@@ -59,6 +63,9 @@ const UserContactDetails = styled.div`
   display: flex;
   div:last-child {
     margin-left: 15px;
+  }
+  @media only screen and (max-width: 1350px) {
+    position: relative;
   }
 `
 
@@ -76,4 +83,10 @@ const UserDetailsDecoration = styled.div`
   background-color: #00DBE5;
   position: absolute;
   bottom: 0;
+  @media only screen and (max-width: 1350px) {
+    bottom: -15px;
+  }
+  @media only screen and (max-width: 950px) {
+    bottom: -35px;
+  }
 `

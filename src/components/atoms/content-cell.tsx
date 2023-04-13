@@ -105,9 +105,7 @@ const StyledContentCell = styled.div<StyledComponentProps>`
   transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 `
 
-const StyledSimplifiedContentCell = styled.div`
-  margin-top: 60px;
-`
+const StyledSimplifiedContentCell = styled.div``
 
 const CellControls = styled.div`
   height: 48px;

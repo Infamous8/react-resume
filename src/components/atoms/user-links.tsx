@@ -33,6 +33,12 @@ const StyledUserLinks = styled.div`
   justify-content: center;
   overflow: visible;
   margin-bottom: 10px;
+  @media only screen and (max-width: 1350px) {
+    margin-top: 30px;
+  }
+  @media only screen and (max-width: 950px) {
+    margin-top: 45px;
+  }
 `
 
 const LinkWrap = styled.div`

@@ -15,13 +15,17 @@ export const Header: React.FC<HeaderProps> = (props) => {
         <SelfContainedContentCell margin={props.margin}>
             <HeaderContent>
                 <UserContent>
-                    <Avatar />
+                    <UserAvatar>
+                        <Avatar />
+                    </UserAvatar>
                     <UserDetails/>
                 </UserContent>
                 <UserLinks/>
-                <SimplifiedContentCell title={'A little about me'} collapsible={true} collapsedDefault={true}>
-                    A little about me
-                </SimplifiedContentCell>
+                <UserAbout>
+                    <SimplifiedContentCell title={'A little about me'} collapsible={true} collapsedDefault={true}>
+                        A little about me
+                    </SimplifiedContentCell>
+                </UserAbout>
             </HeaderContent>
         </SelfContainedContentCell>
     )
@@ -34,4 +38,24 @@ const HeaderContent = styled.nav`
 const UserContent = styled.div`
   width: 100%;
   display: flex;
+  @media only screen and (max-width: 950px) {
+    display: block;
+  }
+`
+
+const UserAvatar = styled.div`
+  @media only screen and (max-width: 950px) {
+    display: flex;
+    justify-content: center;
+  }
+`
+
+const UserAbout = styled.div`
+  margin-top: 70px;
+  @media only screen and (max-width: 1350px) {
+    margin-top: 85px;
+  }
+  @media only screen and (max-width: 950px) {
+    margin-top: 100px;
+  }
 `
