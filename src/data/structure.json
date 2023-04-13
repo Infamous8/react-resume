@@ -1,0 +1,163 @@
+{
+  "user": {
+    "firstName": "FirstName",
+    "middleName": "MiddleName",
+    "lastname": "LastName",
+    "profession": "Profession",
+    "yearsExperience": "5+",
+    "contactPhone": "0000000000",
+    "contactEmail": "email@example.com",
+    "about" : "about me content"
+  },
+  "style": {
+    "avatar": false
+  },
+  "sections": {
+    "associations": {
+      "show": true,
+      "content": [
+        {
+          "name": "Association 1",
+          "relationShip": "employer"
+        },
+        {
+          "name": "Association 2",
+          "relationShip": "employer"
+        },
+        {
+          "name": "Association 3",
+          "relationShip": "Employee"
+        }
+      ]
+    },
+    "education": {
+      "show": true,
+      "content": [
+        {
+          "name": "Qualification 1",
+          "years": "2013 - 2015"
+        },
+        {
+          "name": "Qualification 2",
+          "years": "2013 - 2015"
+        },
+        {
+          "name": "Qualification 3",
+          "years": "2013 - 2015"
+        }
+      ]
+    },
+    "experience": {
+      "show": true,
+      "content": [
+        {
+          "name": "Experience 1",
+          "years": "2013 - 2015"
+        },
+        {
+          "name": "Experience 2",
+          "years": "2013 - 2015"
+        },
+        {
+          "name": "Experience 3",
+          "years": "2013 - 2015"
+        }
+      ]
+    },
+    "interests": {
+      "show": true,
+      "content": [
+        {
+          "name": "Interest 1",
+          "reason": "Reason I Like Interest 1"
+        },
+        {
+          "name": "Interest 2",
+          "reason": "Reason I Like Interest 2"
+        },
+        {
+          "name": "Interest 3",
+          "reason": "Reason I Like Interest 3"
+        }
+      ]
+    },
+    "projects": {
+      "show": true,
+      "content": [
+        {
+          "name": "Project 1",
+          "years": "2013 - 2018",
+          "link": "https://www.link.com"
+        },
+        {
+          "name": "Project 1",
+          "years": "2013 - 2018",
+          "link": "https://www.link.com"
+        },
+        {
+          "name": "Project 1",
+          "years": "2013 - 2018",
+          "link": "https://www.link.com"
+        }
+      ]
+    },
+    "recognitions": {
+      "show": true,
+      "content": [
+        {
+          "name": "Award 1",
+          "year": "2015",
+          "description": "description of award"
+        },
+        {
+          "name": "Award 2",
+          "year": "2016",
+          "description": "description of award"
+        },
+        {
+          "name": "Award 3",
+          "year": "2017",
+          "description": "description of award"
+        }
+      ]
+    },
+    "skills": {
+      "show": true,
+      "content": [
+        {
+          "name": "Skill 1"
+        },
+        {
+          "name": "Skill 2"
+        },
+        {
+          "name": "Skill 3"
+        },
+        {
+          "name": "Skill 4"
+        },
+        {
+          "name": "Skill 5"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com"
+    },
+    {
+      "name": "WhatsApp",
+      "url": "https://wa.me"
+    },
+    {
+      "name": "CodePen",
+      "url": "https://codepen.io"
+    }
+  ]
+}
