@@ -50,11 +50,28 @@ const StyledUserDetails = styled.div`
   }
 `
 
-const UserName = styled.h1``
+const UserName = styled.h1`
+  @media only screen and (max-width: 720px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 420px) {
+    font-size: 18px;
+  }
+`
 
-const UserProfession = styled.h2``
+const UserProfession = styled.h2`
+  @media only screen and (max-width: 720px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 420px) {
+    font-size: 18px;
+  }`
 
-const UserYearsExperience = styled.span``
+const UserYearsExperience = styled.span`
+  @media only screen and (max-width: 420px) {
+    font-size: 16px;
+  }
+`
 
 const UserContactDetails = styled.div`
   position: absolute;
@@ -67,12 +84,23 @@ const UserContactDetails = styled.div`
   @media only screen and (max-width: 1350px) {
     position: relative;
   }
+  @media only screen and (max-width: 420px) {
+    display: block;
+    div:last-child {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
 `
 
 const ContactDetail = styled.div`
   display: flex;
+  align-items: center;
   >div:first-child {
     margin-right: 6px;
+  }
+  @media only screen and (max-width: 420px) {
+    font-size: 14px;
   }
 `
 

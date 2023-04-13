@@ -33,6 +33,13 @@ export const Header: React.FC<HeaderProps> = (props) => {
 
 const HeaderContent = styled.nav`
   padding: 30px;
+  transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  @media only screen and (max-width: 720px) {
+    padding: 15px;
+  }
+  @media only screen and (max-width: 640px) {
+    padding: 5px;
+  }
 `
 
 const UserContent = styled.div`

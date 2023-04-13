@@ -29,12 +29,20 @@ const StyledAvatar = styled.div<StyledComponentProps>`
   background-color: ${props => props.dark ? '#F2F7FF' : 'rgba(0,0,0,.2)'};
   overflow: hidden;
   box-shadow: ${props => props.dark ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'}; //DARK MODE
-  transition: background-color, box-shadow .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: background-color, box-shadow, width, height .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  @media only screen and (max-width: 720px) {
+    width: 150px;
+    height: 150px;
+  }
 `
 
 const UserInitials = styled.div`
   font-size: 64px;
   pointer-events: none;
+  transition: font-size .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  @media only screen and (max-width: 720px) {
+    font-size: 48px;
+  }
 `
 
 const UserImage = styled.div`
