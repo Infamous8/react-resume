@@ -1,23 +1,24 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
+import {StyledComponentProps, ThemeContext} from "../../App";
 
 interface AvatarProps {}
 
 export const Avatar: React.FC<AvatarProps> = (props) => {
+    const mode = useContext(ThemeContext).mode
     const contentData = require('../../data/structure.json');
     const contentStyle = contentData.style;
     const contentUser = contentData.user;
     const userString = contentUser.firstName?.charAt(0) + contentUser.middleName?.charAt(0) + contentUser.lastname?.charAt(0);
-    console.log(userString);
     return (
-        <StyledAvatar>
+        <StyledAvatar mode={mode}>
             {!contentStyle.avatar && <UserInitials>{userString}</UserInitials>}
             {contentStyle.avatar && <UserImage/>}
         </StyledAvatar>
     )
 }
 
-const StyledAvatar = styled.div`
+const StyledAvatar = styled.div<StyledComponentProps>`
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -25,11 +26,10 @@ const StyledAvatar = styled.div`
   align-items: center;
   justify-content: center;
   border: 3px solid #00DBE5;
-  background-color: rgba(0,0,0,.2); //DARK MODE
-  //background-color: #F2F7FF; //LIGHT MODE
+  background-color: ${props => props.mode ? '#F2F7FF' : 'rgba(0,0,0,.2)'};
   overflow: hidden;
-  box-shadow:  -12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2); //DARK MODE
-  //box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF; //LIGHT MODE
+  box-shadow: ${props => props.mode ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'}; //DARK MODE
+  transition: background-color, box-shadow .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 `
 
 const UserInitials = styled.div`

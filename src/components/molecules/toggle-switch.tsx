@@ -10,7 +10,7 @@ export const ToggleSwitch: React.FC<ToggleSwitchProps> = (props) => {
     return (
         <StyledToggleSwitch>
             <Switch/>
-            <label>{props.title}</label>
+            <StyledToggleLabel>{props.title}</StyledToggleLabel>
         </StyledToggleSwitch>
     )
 }
@@ -18,7 +18,8 @@ export const ToggleSwitch: React.FC<ToggleSwitchProps> = (props) => {
 const StyledToggleSwitch = styled.div`
   display: flex;
   align-items: center;
-  label {
-    margin-left: 12px;
-  }
+`
+
+const StyledToggleLabel = styled.label`
+  margin-left: 12px;
 `

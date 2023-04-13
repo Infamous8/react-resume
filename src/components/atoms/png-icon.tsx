@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import {Tooltip} from "./tooltip";
+import {StyledComponentProps, ThemeContext} from "../../App";
 
 interface MaterialIconPhoneProps {
     type: 'GitHub' | 'LinkedIn' | 'WhatsApp' | 'CodePen'
@@ -9,10 +10,11 @@ interface MaterialIconPhoneProps {
 }
 
 export const PngIcon: React.FC<MaterialIconPhoneProps> = (props) => {
+    const mode = useContext(ThemeContext).mode
     const iconImg = require(`../../assets/icons/${props.mode}/${props.type}.png`)
     return (
         <StyledPngIcon href={props.href} target={"_blank"}>
-            <PngIconContent>
+            <PngIconContent mode={mode}>
                 <img src={iconImg} alt={`${props.type} icon`} />
             </PngIconContent>
             <ToolTipWrap className={'tooltip'}>
@@ -27,22 +29,22 @@ const StyledPngIcon = styled.a`
   cursor: pointer;
 `
 
-const PngIconContent = styled.div`
+const PngIconContent = styled.div<StyledComponentProps>`
   margin: 0 auto;
   width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #FFFFFF; //DARK MODE
-  //border: 2px solid #000000; //LIGHT MODE
+  border: ${props => props.mode ? '2px solid #000000' : '2px solid #FFFFFF'};
   border-radius: 50%;
   position: relative;
+  transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
   img {
     height: 20px;
     width: auto;
-    filter: invert(1); //DARK MODE
-    //filter: invert(0); //LIGHT MODE
+    filter: ${props => props.mode? 'invert(0)' : 'invert(1)'};
+    transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   :hover + .tooltip {
     display: block;

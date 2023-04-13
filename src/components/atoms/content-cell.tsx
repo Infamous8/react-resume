@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import styled from "styled-components";
 import {Button} from "./button";
+import {StyledComponentProps, ThemeContext} from "../../App";
 
 interface ContentCellProps {
     children: React.ReactNode
@@ -11,6 +12,7 @@ interface ContentCellProps {
 }
 
 export const ContentCell: React.FC<ContentCellProps> = (props) => {
+    const mode = useContext(ThemeContext).mode
     const [collapsed, setCollapsed] = useState(props.collapsedDefault)
 
     const toggleCollapse = () => {
@@ -18,7 +20,7 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
     }
 
     return (
-        <StyledContentCell>
+        <StyledContentCell mode={mode}>
             {props.collapsible && (
                 <CellControls>
                     <ControlsTitle>
@@ -48,16 +50,14 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
     )
 }
 
-const StyledContentCell = styled.div`
+const StyledContentCell = styled.div<StyledComponentProps>`
   border-radius: 8px;
   padding: 15px;
   overflow: hidden;
-  background-color: #262626; //DARK MODE
-  //background-color: #E0E5EC; //LIGHT MODE
-  box-shadow:  -12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2); //DARK MODE
-  //box-shadow:  15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF; //LIGHT MODE
+  background-color: ${props => props.mode ? '#E0E5EC' : '#262626'};
+  box-shadow: ${props => props.mode ? '15px 15px 30px #CED3D9, -15px -15px 30px #F2F7FF' : '-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)'} ;
   margin-bottom: 30px;
-  transition: height .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 `
 
 const CellControls = styled.div`

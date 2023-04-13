@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import styled from "styled-components";
+import {ThemeContext} from "../../App";
 
 interface SwitchProps {}
 
 export const Switch: React.FC<SwitchProps> = (props) => {
+    const currentTheme = useContext(ThemeContext)
     const [toggled, setToggled] = useState(true)
 
     const toggleSwitch = () => {
-        setToggled(!toggled)
+        setToggled(!toggled);
+        currentTheme.toggleMode();
     }
 
     return (
