@@ -12,13 +12,34 @@
     "avatar": false
   },
   "sections": {
-    "associations": true,
-    "education": true,
-    "experience": true,
-    "interests": true,
-    "projects": true,
-    "recognitions": true,
-    "skills": true
+    "associations": {
+      "show": true,
+      "content": []
+    },
+    "education": {
+      "show": true,
+      "content": []
+    },
+    "experience": {
+      "show": true,
+      "content": []
+    },
+    "interests": {
+      "show": true,
+      "content": []
+    },
+    "projects": {
+      "show": true,
+      "content": []
+    },
+    "recognitions": {
+      "show": true,
+      "content": []
+    },
+    "skills": {
+      "show": true,
+      "content": []
+    }
   },
   "links": [
     {
