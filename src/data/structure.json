@@ -1,10 +1,10 @@
 {
   "user": {
     "firstName": "FirstName",
-    "middleName": "MiddleName",
+    "middleName": "SecondName",
     "lastname": "LastName",
     "profession": "Profession",
-    "yearsExperience": "5+",
+    "yearsExperience": "6",
     "contactPhone": "0000000000",
     "contactEmail": "email@example.com",
     "about" : "about me content"
@@ -18,15 +18,18 @@
       "content": [
         {
           "name": "Association 1",
-          "relationShip": "employer"
+          "relationShip": "employer",
+          "description": "some description of association"
         },
         {
           "name": "Association 2",
-          "relationShip": "employer"
+          "relationShip": "employer",
+          "description": "some description of association"
         },
         {
           "name": "Association 3",
-          "relationShip": "Employee"
+          "relationShip": "Employee",
+          "description": "some description of association"
         }
       ]
     },
@@ -35,15 +38,18 @@
       "content": [
         {
           "name": "Qualification 1",
-          "years": "2013 - 2015"
+          "years": "2013 - 2015",
+          "description": "Some description of item"
         },
         {
           "name": "Qualification 2",
-          "years": "2013 - 2015"
+          "years": "2013 - 2015",
+          "description": "Some description of item"
         },
         {
           "name": "Qualification 3",
-          "years": "2013 - 2015"
+          "years": "2013 - 2015",
+          "description": "Some description of item"
         }
       ]
     },
@@ -52,15 +58,18 @@
       "content": [
         {
           "name": "Experience 1",
-          "years": "2013 - 2015"
+          "years": "2013 - 2015",
+          "description": "some description of experience"
         },
         {
           "name": "Experience 2",
-          "years": "2013 - 2015"
+          "years": "2013 - 2015",
+          "description": "some description of experience"
         },
         {
           "name": "Experience 3",
-          "years": "2013 - 2015"
+          "years": "2013 - 2015",
+          "description": "some description of experience"
         }
       ]
     },
@@ -87,17 +96,20 @@
         {
           "name": "Project 1",
           "years": "2013 - 2018",
-          "link": "https://www.link.com"
+          "link": "https://www.link.com",
+          "description": "Project item description"
         },
         {
-          "name": "Project 1",
+          "name": "Project 2",
           "years": "2013 - 2018",
-          "link": "https://www.link.com"
+          "link": "https://www.link.com",
+          "description": "Project item description"
         },
         {
-          "name": "Project 1",
+          "name": "Project 3",
           "years": "2013 - 2018",
-          "link": "https://www.link.com"
+          "link": "https://www.link.com",
+          "description": "Project item description"
         }
       ]
     },
@@ -107,17 +119,17 @@
         {
           "name": "Award 1",
           "year": "2015",
-          "description": "description of award"
+          "description": "description of recognition"
         },
         {
           "name": "Award 2",
           "year": "2016",
-          "description": "description of award"
+          "description": "description of recognition"
         },
         {
           "name": "Award 3",
           "year": "2017",
-          "description": "description of award"
+          "description": "description of recognition"
         }
       ]
     },
@@ -125,19 +137,29 @@
       "show": true,
       "content": [
         {
-          "name": "Skill 1"
+          "name": "Skill 1",
+          "years": "6 years",
+          "primary": true
         },
         {
-          "name": "Skill 2"
+          "name": "Skill 2",
+          "years":  "6 years",
+          "primary":  true
         },
         {
-          "name": "Skill 3"
+          "name": "Skill 3",
+          "years":  "6 years",
+          "primary":  true
         },
         {
-          "name": "Skill 4"
+          "name": "Skill 4",
+          "years":  "6 years",
+          "primary":  false
         },
         {
-          "name": "Skill 5"
+          "name": "Skill 5",
+          "years":  "6 years",
+          "primary":  false
         }
       ]
     }
