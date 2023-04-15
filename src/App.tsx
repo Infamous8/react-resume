@@ -16,18 +16,37 @@ function App() {
   const [mode, setMode] = useState(true);
 
   const toggleMode = () => {
-      setMode(prevMode => !prevMode);
+      setMode((prev) => {
+          localStorage.setItem("mode", !prev ? "light": "dark");
+          return !prev;
+      });
+  }
+
+  const setColourMode = (mode: boolean) => {
+      if (mode) {
+          document.body.style.backgroundColor = '#E0E5EC';
+          document.body.style.color = '#212427';
+      } else {
+          document.body.style.backgroundColor = '#212427';
+          document.body.style.color = '#F8F0E3';
+      }
   }
 
   useEffect(() => {
-      if (mode) {
-          document.body.style.backgroundColor = '#E0E5EC'
-          document.body.style.color = '#212427';
-      } else {
-          document.body.style.backgroundColor = '#212427'
-          document.body.style.color = '#F8F0E3'
+      const current = localStorage.getItem("mode");
+
+      if (!current) {
+          localStorage.setItem("mode", "light");
+          setMode(true);
+          return
       }
-  });
+
+      setMode(current === "light");
+  }, []);
+
+  useEffect(() => {
+      setColourMode(mode);
+  }, [mode])
 
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>
