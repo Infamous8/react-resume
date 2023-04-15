@@ -15,44 +15,45 @@ export const SectionInlineContent: React.FC<SectionInlineContentProps> = (props)
     return (
         <>
             {props.primary && (
-                <Test>
-                    <StyledSectionInlineContent dark={mode}>
+                <StyledInlineContent>
+                    <InlineContentItem dark={mode}>
                         {props.name}
                         <Divider marginLeft={'15px'} marginRight={'15px'} />
                         {props.years}
-                    </StyledSectionInlineContent>
+                    </InlineContentItem>
                     <ToolTipWrap className={'skillTooltip'}>
                         <Tooltip tip={'Primary Skill'} />
                     </ToolTipWrap>
-                </Test>
+                </StyledInlineContent>
             )}
             {!props.primary && (
-                <Test>
-                    <StyledSectionInlineContentSecondary dark={mode}>
+                <StyledInlineContent>
+                    <InlineContentSecondaryItem dark={mode}>
                         {props.name}
                         <Divider marginLeft={'15px'} marginRight={'15px'} />
                         {props.years}
-                    </StyledSectionInlineContentSecondary>
+                    </InlineContentSecondaryItem>
                     <ToolTipWrap className={'skillTooltip'}>
                         <Tooltip tip={'Secondary Skill'} />
                     </ToolTipWrap>
-                </Test>
+                </StyledInlineContent>
             )}
         </>
     )
 }
 
-const Test = styled.div`
-  height: 72px;
-  margin-top: 20px;
+const StyledInlineContent = styled.div`
+  display: inline-block;
+  position: relative;
 `
 
-const StyledSectionInlineContent = styled.span<StyledComponentProps>`
+const InlineContentItem = styled.span<StyledComponentProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: ${props => props.dark ? '#FFFFFF' : 'rgba(0,0,0,.2)'};
   margin-right: 15px;
+  margin-bottom: 15px;
   padding: 10px 15px;
   border-radius: 20px;
   position: relative;
@@ -62,11 +63,14 @@ const StyledSectionInlineContent = styled.span<StyledComponentProps>`
   }
 `
 
-const StyledSectionInlineContentSecondary = styled(StyledSectionInlineContent)<StyledComponentProps>`
+const InlineContentSecondaryItem = styled(InlineContentItem)<StyledComponentProps>`
   background-color: ${props => props.dark ? '#F2F7FF' : 'rgba(0,0,0,.1)'};
 `
 
 const ToolTipWrap = styled.div`
   display: none;
-  margin: 0 auto;
+  position: absolute;
+  bottom: -10px;
+  left: 11%;
+  z-index: 100;
 `

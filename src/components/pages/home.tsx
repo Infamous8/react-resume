@@ -9,6 +9,7 @@ import {Skills} from "../molecules/skills";
 import {Experience} from "../molecules/experience";
 import {Education} from "../molecules/education";
 import {Flex} from "../atoms/flex";
+import {PillBox} from "../atoms/pill-box";
 
 interface HomeProps {}
 
@@ -29,9 +30,9 @@ export const Home: React.FC<HomeProps> = (props) => {
             )}
             {contentSections.skills.show && (
                 <ContentCell  section={'skills'} collapsible={true} collapsedDefault={false}>
-                    <Flex>
+                    <PillBox>
                         <Skills />
-                    </Flex>
+                    </PillBox>
                 </ContentCell>
             )}
             {contentSections.projects.show && (
