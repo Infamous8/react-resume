@@ -1,17 +1,33 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import styled from "styled-components";
 import {ThemeContext} from "../../App";
 
 interface SwitchProps {}
 
 export const Switch: React.FC<SwitchProps> = (props) => {
-    const currentTheme = useContext(ThemeContext)
-    const [toggled, setToggled] = useState(true)
+    const currentTheme = useContext(ThemeContext);
+    const [toggled, setToggled] = useState(true);
 
     const toggleSwitch = () => {
         setToggled(!toggled);
         currentTheme.toggleMode();
     }
+
+    useEffect(() => {
+        console.log(currentTheme.mode)
+    }, [])
+
+    useEffect(() => {
+        const mode = localStorage.getItem('mode');
+        if (mode === "dark") {
+            setToggled(false)
+        }
+        if (mode === "light") {
+            setToggled(true)
+        }
+        else return
+        console.log(mode)
+    },[])
 
     return (
         <StyledSwitch onClick={toggleSwitch}>

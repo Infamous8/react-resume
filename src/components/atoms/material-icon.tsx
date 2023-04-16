@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface MaterialIconPhoneProps {
-    name: 'call' | 'mail' | 'expand_more'
+    name: 'call' | 'mail' | 'expand_more' | 'arrow_back_ios'
 }
 
 export const MaterialIcon: React.FC<MaterialIconPhoneProps> = (props) => {
@@ -10,6 +10,8 @@ export const MaterialIcon: React.FC<MaterialIconPhoneProps> = (props) => {
         <StyledMaterialIcon>
             <span className={'material-symbols-outlined'}>{props.name}</span>
         </StyledMaterialIcon>
+
+
     )
 }
 
