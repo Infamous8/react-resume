@@ -1,5 +1,7 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {Home} from "./components/pages/home";
+import {Route, Routes} from "react-router-dom";
+import {Attributions} from "./components/pages/attributions";
 
 interface ThemeContextProps {
     mode: boolean
@@ -50,9 +52,10 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>
-        <div>
-            <Home/>
-        </div>
+        <Routes>
+            <Route path={'/'} element={<Home/>} />
+            <Route path={'/attributions'} element={<Attributions />} />
+        </Routes>
     </ThemeContext.Provider>
   );
 }

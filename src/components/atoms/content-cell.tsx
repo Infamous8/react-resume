@@ -25,7 +25,6 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
                 <CellControls>
                     <ControlsTitle>
                         {props.section && props.section}
-                        {props.title && props.title}
                     </ControlsTitle>
                     <ControlsDecorationWrap>
                         {collapsed && <ControlsDecorationForward />}
@@ -34,6 +33,13 @@ export const ContentCell: React.FC<ContentCellProps> = (props) => {
                     <ControlsButtonWrap>
                         <Button onClick={toggleCollapse} collapsedDefault={props.collapsedDefault} />
                     </ControlsButtonWrap>
+                </CellControls>
+            )}
+            {props.title && (
+                <CellControls>
+                    <ControlsTitle>
+                        {props.title && props.title}
+                    </ControlsTitle>
                 </CellControls>
             )}
             {collapsed && props.collapsible && (

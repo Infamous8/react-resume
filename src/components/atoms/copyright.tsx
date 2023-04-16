@@ -25,6 +25,9 @@ export const Copyright: React.FC<CopyrightProps> = (props) => {
 const StyledCopyright = styled.div`
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 510px) {
+    justify-content: center;
+  }
 `
 
 const NameSpace = styled.span`
