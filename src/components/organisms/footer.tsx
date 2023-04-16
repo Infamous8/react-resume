@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                 <DividerWrap>
                     <Divider marginLeft={'0'} marginRight={'6px'} />
                 </DividerWrap>
-                <Link to={'/attributions'} style={{textDecoration: "none"}}><FooterLink>Attributions</FooterLink></Link>
+                <Link to={'/attributions'} style={{textDecoration: "none"}}>Attributions</Link>
             </FooterContent>
         </SelfContainedContentCell>
     )
@@ -40,9 +40,4 @@ const DividerWrap = styled.div`
     display: none;
     visibility: hidden;
   }
-`
-
-const FooterLink = styled.a`
-  color: #808080;
-  text-decoration: none;
 `

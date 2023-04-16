@@ -14,10 +14,6 @@ export const Switch: React.FC<SwitchProps> = (props) => {
     }
 
     useEffect(() => {
-        console.log(currentTheme.mode)
-    }, [])
-
-    useEffect(() => {
         const mode = localStorage.getItem('mode');
         if (mode === "dark") {
             setToggled(false)
@@ -26,7 +22,6 @@ export const Switch: React.FC<SwitchProps> = (props) => {
             setToggled(true)
         }
         else return
-        console.log(mode)
     },[])
 
     return (
