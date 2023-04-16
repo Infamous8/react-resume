@@ -9,6 +9,8 @@ web-based resume project. The template is intended to facilitate easy access to 
 be tailored to meet individual needs and preferences. With its modular architecture, the template provides a solid foundation 
 for creating a high-quality, user-friendly resume website that can be easily maintained and updated.
 
+[View live demo](react-resume-69e.pages.dev/)
+
 ## Customising the Data & Layout
 
 The rendered data is stored in the src/data/structure.json file, which includes the following:
