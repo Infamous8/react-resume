@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {Copyright} from "../atoms/copyright";
 import {SelfContainedContentCell} from "../molecules/self-contained-content-cell";
 import {Divider} from "../atoms/divider";
 import {Link} from "react-router-dom";
+import {Copyright} from "../atoms/copyright";
 
 interface FooterProps {
     margin?: string
